@@ -1,2 +1,2 @@
 # Deep Learning Projects
-This repo contains some of my work as a machine learning engineer.
+This repo contains some of my work as a machine learning engineer. Over the past three years I've been involved in diverse Deep Learning projects using different architectures. From predicting fuel properties with dense fully-connected neurons, or analyzing wind behavior with LSTM networks, to segmenting blood vessels from human kidneys with U-Nets (CNNs). I'm excited to learn about the different applications of AI in the engineering world.
