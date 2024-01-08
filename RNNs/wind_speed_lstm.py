@@ -26,7 +26,7 @@ wdsp = df['wdsp'] # wind speed
 # look for missing data, if greater than 0 then correct in following steps
 if (df==0).sum(axis=0) > 0:
     imputer = SimpleImputer(missing_values=0, strategy='mean') # it's better to replace data with the mean values than
-    # erasing it. Timeseries models need the previous values for prediction so missing values would cause memory leakage
+    # erasing it. Timeseries models need the previous values for prediction so missing values are memory loss
     imputer.fit(df)
     imputed_data = imputer.fit_transform(df)
     full_data = df
@@ -94,8 +94,8 @@ X_test['wdsp'] = X_test_values
 #define generator
 n_input = 3000
 n_features = 1
-# This is a class that generates batches of input-output pairs from time-series data
-# It takes sequential data as input and creates sliding windows of data along with corresponding TARGET values.
+# This class generates batches of input-output pairs from time-series data, it takes 
+# sequential data as input and creates sliding windows of data along with corresponding TARGET values.
 generator = TimeseriesGenerator(X_train, X_train, length = n_input, batch_size = 1) # batch is similar to k-fold
 
 # Analize generator output
