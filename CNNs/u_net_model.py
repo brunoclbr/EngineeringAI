@@ -6,12 +6,12 @@ from keras.layers import Activation, MaxPool2D, Concatenate
 #Convolutional block to be used in autoencoder and U-Net
 def conv_block(input, num_filters):
     x = Conv2D(num_filters, 3, padding="same")(input)
-    x = BatchNormalization()(x)   #Not in the original network. 
+    x = BatchNormalization()(x)  
     x = Activation("relu")(x)
     x = Dropout(0.1)(x)
 
     x = Conv2D(num_filters, 3, padding="same")(x)
-    x = BatchNormalization()(x)  #Not in the original network
+    x = BatchNormalization()(x)  
     x = Activation("relu")(x)
 
     return x
@@ -86,8 +86,8 @@ def build_unet(input_shape):
     d3 = decoder_block_for_unet(d2, s2, 128)
     d4 = decoder_block_for_unet(d3, s1, 64)
 
-    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d4)  #Binary (can be multiclass) 
-    # I wanted to use softmax as activation function!
+    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d4)  #Binary 
+   
 
     model = Model(inputs, outputs, name="U-Net")
     print(model.summary())
