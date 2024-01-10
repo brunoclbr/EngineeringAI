@@ -24,7 +24,7 @@ Always keep in mind:
 - A RNN is a for loop that reuses quantities computed during the previous interation of the loop (keep track of memory)
 - Use of bidirectional networks can be useful for text processing, not for forcasting
 - FF or CN produce information loss (no memory)
-- LSTM fights the vanishing-gradient problem (meaning the earlier training data) as they keep track of "old memory" 
+- LSTM fights the vanishing-gradient problem (meaning the loss of earlier training data) as they keep track of "old memory" 
 '''
 
 # import and preprocess data. Hourly wheather data in the city of Vitoria, Brazil
