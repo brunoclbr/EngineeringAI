@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from statsmodels.tsa.seasonal import seasonal_decompose
+#from statsmodels.tsa.seasonal import seasonal_decompose
 # Scikit learn
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
