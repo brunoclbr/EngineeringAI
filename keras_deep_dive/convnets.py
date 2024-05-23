@@ -15,4 +15,10 @@ padding: valid and same to get (or not get) all the tiles of an image after covo
 max pooling: aka downsampling. Idea is to reduce number of trainable parameters and to induce spatial-filter
 hierarchis by making succesive conv layers to look at increasingly large windows. Basically without there is too much
 information to learn from
+
+Create new branch to practice Git???
+
+And practice coding with the book and collab?
 """
+
+import numpy as np
