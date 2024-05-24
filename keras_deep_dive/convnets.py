@@ -16,3 +16,5 @@ max pooling: aka downsampling. Idea is to reduce number of trainable parameters 
 hierarchis by making succesive conv layers to look at increasingly large windows. Basically without there is too much
 information to learn from
 """
+
+# new changes 
