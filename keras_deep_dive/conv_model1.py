@@ -1,6 +1,10 @@
 from tensorflow import keras
 from keras import layers
 
+"""
+simple convolutional model for image classification
+"""
+
 inputs = keras.Input(shape=(180, 180, 3))
 x = layers.Rescaling(1./255)(inputs)
 x = layers.Conv2D(filters=32, kernel_size=3, activation="relu")(x)
