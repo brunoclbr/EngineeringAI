@@ -16,7 +16,7 @@ max pooling: aka downsampling. Idea is to reduce number of trainable parameters 
 hierarchis by making succesive conv layers to look at increasingly large windows. Basically without there is too much
 information to learn from
 
-Create new branch to practice Git???
+Create new branch to practice Git??? Thats what im doing
 
 And practice coding with the book and collab?
 """
