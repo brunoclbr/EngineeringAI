@@ -2,7 +2,8 @@ from tensorflow import keras
 from keras import layers
 
 """
-simple convolutional model for image classification
+simple convolutional model for image classification. 
+With this comment my branch is ahead of origin by 2 commits
 """
 
 inputs = keras.Input(shape=(180, 180, 3))
