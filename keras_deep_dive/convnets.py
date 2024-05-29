@@ -25,13 +25,14 @@ import os, shutil, pathlib
 import conv_model1
 from tensorflow import keras
 from keras.utils import image_dataset_from_directory # set up data pipeline
+import matplotlib.pyplot as plt
 
 original_dir = pathlib.Path("train")
 new_base_dir = pathlib.Path("cats_vs_dogs_small")
 
 def make_subset(subset_name, start_index, end_index):
     for category in ("cat", "dog"):
-        dir = new_base_dir / subset_name / category 
+        dir = new_base_dir / subset_name / category #this will throw an error
         os.makedirs(dir)
         fnames = [f"{category}.{i}.jpg" 
                   for i in range(start_index, end_index)]
@@ -85,3 +86,20 @@ history = model.fit(
     validation_data=validation_dataset,
     callbacks=callbacks
 )
+
+accuracy = history.history["accuracy"]
+val_accuracy = history.history["val_accuracy"]
+loss = history.history["loss"]
+val_loss = history.history["val_loss"]
+epochs = range(1, len(accuracy) + 1)
+plt.plot(epochs, accuracy, "bo", label="Training accuracy")
+plt.plot(epochs, val_accuracy, "b", label="Validation accuracy")
+plt.title("Training and validation accuracy")
+plt.legend()
+plt.figure()
+plt.plot(epochs, loss, "bo", label="Training loss")
+plt.plot(epochs, val_loss, "b", label="Validation loss")
+plt.title("Training and validation loss")
+
+test_model = keras.models.load_model("convnet_from_scratch.keras")
+test_loss, test_acc = test_model.evaluate(test_dataset)
