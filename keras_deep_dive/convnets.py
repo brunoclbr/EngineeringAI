@@ -16,9 +16,13 @@ max pooling: aka downsampling. Idea is to reduce number of trainable parameters 
 hierarchis by making succesive conv layers to look at increasingly large windows. Basically without there is too much
 information to learn from
 
-Create new branch to practice Git??? Thats what im doing
+Work with pretrained models: feature extraction and fine-tuning
+    -feature extraction: using representations learned by previous nets. For convnets, we take the conv base
+    of the network and add a new classifier layer(s) at the end. Presence maps of convnets are generic maps of generic fetures
+    of images. 
 
-And practice coding with the book and collab?
+    -fine tuning: Either freeze the old model you're using and the add a dense layer(s) on top of it and train, or, 
+    freeze the first layers of the old model and train the remaining layers with the new classifier together.
 """
 
 import os, shutil, pathlib
@@ -103,3 +107,4 @@ plt.title("Training and validation loss")
 
 test_model = keras.models.load_model("convnet_from_scratch.keras")
 test_loss, test_acc = test_model.evaluate(test_dataset)
+print(f"Test accuracy: {test_acc:.2f}")
