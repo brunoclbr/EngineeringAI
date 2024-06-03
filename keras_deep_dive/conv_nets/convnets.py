@@ -26,7 +26,7 @@ Work with pretrained models: feature extraction and fine-tuning
 """
 
 import os, shutil, pathlib
-import conv_model1
+import Deep_Learning_Projects.keras_deep_dive.conv_nets.conv_model1 as conv_model1
 from tensorflow import keras
 from keras.utils import image_dataset_from_directory # set up data pipeline
 import matplotlib.pyplot as plt
