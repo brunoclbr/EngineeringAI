@@ -4,6 +4,8 @@ commands for downloading data on colab:
     !wget http:/ /www.robots.ox.ac.uk/~vgg/data/pets/data/annotations.tar.gz
     !tar -xf images.tar.gz
     !tar -xf annotations.tar.gz
+
+At the end run this script in colab
 """
 
 import os 
@@ -31,6 +33,16 @@ plt.axis("off")
 plt.imshow(load_img(input_img_paths[9])) #input nr 9
 
 def display_target(target_array):
+    """
+    In your case, target_array is an object, typically a NumPy array.
+    The expression target_array.astype("uint8") means 
+    you are calling the astype method on the target_array object.
+
+    In-Place Methods: Some methods modify the object in place. For example, 
+    list.append(x) modifies the list by adding an element x to it.
+    Non-In-Place Methods: Other methods return a new object and do not modify the original object. 
+    For example, astype in NumPy returns a new array of the specified type and does not modify the original array.
+    """
     normalized_array = (target_array.astype("uint8") -1)*127 # -1 so that labels go from 0-2 istead of 1-3 and *127 so that labels become 0, 127, 2554 (b,g,w)
     plt.axis("off")
     plt.imshow(normalized_array[:,:,0])
