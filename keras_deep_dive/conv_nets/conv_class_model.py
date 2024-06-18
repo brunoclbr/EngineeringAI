@@ -8,6 +8,9 @@ With this comment my branch is ahead of origin by 2 commits
 With augmentation I fight against overfitting, remixing the data 
 to feed the model to. Like dropout layers, this augmentation layers are
 inactive during model inference (prediction and evaluation).
+
+The filters parameter defines the number of output filters (or feature maps) in the convolution.
+This means it controls the number of different features that the convolutional layer will learn to detect.
 """
 
 data_augmentation = keras.Sequential(
