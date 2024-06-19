@@ -20,7 +20,8 @@ more realistic images. del(gan)/del(w_gen) shows in direction of a minimum for t
 as close as possible. The generator will be trained to predict "real" always, because we want the generator to create 
 the best fake images. The discriminator will be trained with mixd images (real and fake).
 
-Bag of tricks on page 404. A lot of heuristics for GAN.
+Bag of tricks on page 404. A lot of heuristics for GAN. 
+Read again.
 """
 
 dataset = keras.utils.image_dataset_from_directory(
