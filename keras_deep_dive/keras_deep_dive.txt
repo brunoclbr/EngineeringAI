@@ -1,5 +1,3 @@
-import numpy as np
-"""
 - API's: Sequential Model, Functional API, Model Subclassing
 - Visualizing models
 - Callbacks
@@ -18,5 +16,3 @@ import numpy as np
 
 - run your code eagerly if you want to debug. Add the @tf. ... decorator to run your
     code as a computaton graph (quicker)    
-    
-"""
