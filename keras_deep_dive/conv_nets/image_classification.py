@@ -26,7 +26,7 @@ Work with pretrained models: feature extraction and fine-tuning
 """
 
 import os, shutil, pathlib
-import conv_model1
+import conv_class_model
 from tensorflow import keras
 from keras.utils import image_dataset_from_directory # set up data pipeline
 import matplotlib.pyplot as plt
@@ -47,7 +47,7 @@ make_subset("train", start_index=0, end_index=1000)
 make_subset("validation", start_index=1000, end_index=1500)
 make_subset("test", start_index=1500, end_index=2500)
 
-model = conv_model1
+model = conv_class_model
 
 # transform images into preprocessed floating-point tensors with a generator
 # 1) read files 2) JPEG --> RGB grid of pixels 3) convert into floating points 4) resize 5) pack into batches
