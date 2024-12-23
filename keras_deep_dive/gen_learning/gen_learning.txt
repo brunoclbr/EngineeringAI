@@ -1,0 +1,10 @@
+when sampling from generative models, its always good to 
+explore different amounts of radomness in the generation proess
+
+a good balance between learned structures and randomness is what makes generation interesting
+
+using gradient ascent (like u-net) seems to maximize filter (or layers) activations. we need to restore the small
+filter size to its original size, hence the ladder form of the network (maybe hehe). gradient ascent was
+about maximizing loss w.r.t weights contributing to a layer
+
+on 375 i make DeepDreams based on pre-trained convnets. 380 talks about octaves and similar "filter" visualisation
