@@ -1,0 +1,5 @@
+Diffusion, auto-regression and autoencoders (VAE)
+    --> jupyter notebook/colab
+LSTM with grad vanishing problem 
+Summary git GNN and work on this repo
+Add BO
