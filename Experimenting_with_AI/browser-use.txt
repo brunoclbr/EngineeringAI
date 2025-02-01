@@ -1,0 +1,68 @@
+Browser Use is an open-source framework designed to make websites accessible to AI agents by providing a powerful yet simple interface for browser automation. It enables AI agents to interact with web browsers, allowing them to perform tasks such as web scraping, form submissions, and data extraction. ([browser-use.com](https://browser-use.com/?utm_source=chatgpt.com))
+
+**Key Features:**
+
+- **Vision and HTML Extraction:** Combines visual understanding with HTML structure extraction for comprehensive web interaction.
+- **Multi-Tab Management:** Automatically handles multiple browser tabs for complex workflows and parallel processing.
+- **Element Tracking:** Extracts clicked elements' XPaths and repeats exact actions for consistent automation.
+- **Custom Actions:** Allows the addition of custom actions like saving to files, database operations, notifications, or human input handling.
+- **Self-Correcting:** Intelligent error handling and automatic recovery for robust automation workflows.
+- **LLM Support:** Compatible with all LangChain Large Language Models (LLMs), including GPT-4, Claude 3, and Llama 2.
+
+**Implementation Steps:**
+
+1. **Installation:**
+   - Install the `browser-use` package using pip:
+     ```bash
+     pip install browser-use
+     ```
+   - Optionally, install Playwright for browser automation:
+     ```bash
+     playwright install
+     ```
+
+2. **Set Up API Keys:**
+   - Add your API keys to a `.env` file in your project directory:
+     ```
+     OPENAI_API_KEY=your_openai_api_key
+     ANTHROPIC_API_KEY=your_anthropic_api_key
+     ```
+
+3. **Create an AI Agent:**
+   - Use the following Python script to create and run an AI agent:
+     ```python
+     from langchain_openai import ChatOpenAI
+     from browser_use import Agent
+     import asyncio
+
+     async def main():
+         agent = Agent(
+             task="Find a one-way flight from Bali to Oman on 12 January 2025 on Google Flights. Return me the cheapest option.",
+             llm=ChatOpenAI(model="gpt-4o"),
+         )
+         result = await agent.run()
+         print(result)
+
+     if __name__ == "__main__":
+         asyncio.run(main())
+     ```
+   - Replace the `task` parameter with your desired task description.
+
+4. **Register Custom Actions (Optional):**
+   - Define custom actions to extend the agent's capabilities:
+     ```python
+     from browser_use.controller.service import Controller
+
+     controller = Controller()
+
+     @controller.action('Ask user for information')
+     def ask_human(question: str, display_question: bool) -> str:
+         return input(f'\n{question}\nInput: ')
+     ```
+   - Integrate the controller with your agent:
+     ```python
+     agent = Agent(task=task, llm=model, controller=controller)
+     await agent.run()
+     ```
+
+For more detailed information and advanced configurations, refer to the official Browser Use documentation. ([docs.browser-use.com](https://docs.browser-use.com/introduction?utm_source=chatgpt.com)) 
