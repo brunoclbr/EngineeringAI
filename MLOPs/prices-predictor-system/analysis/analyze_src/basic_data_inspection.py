@@ -111,6 +111,7 @@ if __name__ == "__main__":
     # Initialize the Data Inspector with a specific strategy
     # inspector = DataInspector(DataTypesInspectionStrategy())
     # inspector.execute_inspection(df)
+    # I also could create an object of a DataInspectionStrategy and pass it to my DataInspector object
 
     # Change strategy to Summary Statistics and execute
     # inspector.set_strategy(SummaryStatisticsInspectionStrategy())
