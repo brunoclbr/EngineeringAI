@@ -35,9 +35,10 @@ This script turns the trained model into a **REST API** using FastAPI, enabling 
 - Returns predicted adsorption energies in **electron volts (eV)**.
 - Supports **batch predictions** and can generate **parity plots** comparing model predictions to DFT values.
 
-### **How to Run:**
+#### **How to Run:**
 ```bash
 uvicorn predict:app --reload
+```
 
 ### **3. `cat_web_app.py` - Streamlit Web Interface**
 This script provides a user-friendly **web application** for the research team.
