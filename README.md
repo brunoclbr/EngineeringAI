@@ -8,15 +8,11 @@ Over the past five years, I’ve worked on various projects utilizing different 
 📂 **Location:** `Dense_networks/`  
 This was my first deep learning project, where I **predicted fuel properties** based on their **chemical structure** and **thermodynamic conditions**. The main challenge was **feature engineering**, particularly segmenting thermodynamic states effectively to **prevent information leakage** from training to validation sets.  
 
-### **2. Recurrent Neural Networks (RNNs) - Wind Behavior Analysis**
-📂 **Location:** `RNNs/`  
-As part of my **TechLabs project**, I implemented **LSTM networks** to analyze **wind behavior**. The dataset contained numerous features, making **feature selection and preprocessing** a significant challenge in building a meaningful model.  
-
-### **3. Convolutional Neural Networks (CNNs) - Medical Image Segmentation**
+### **2. Convolutional Neural Networks (CNNs) - Medical Image Segmentation**
 📂 **Location:** `CNNs/`  
 This project focuses on using a **U-Net architecture** to **segment blood vessels in human kidneys**. The key difficulty lies in tuning **ImageDataGenerator** parameters while balancing **computational efficiency**. The main learnings were **data augmentation strategies** to enhance performance.  
 
-### **4. Graph Neural Networks (GNNs) - Catalyst Adsorption Energy Prediction**
+### **3. Graph Neural Networks (GNNs) - Catalyst Adsorption Energy Prediction**
 📂 **Location:** `GNNs/`  
 In this project, I leverage **Graph Neural Networks (GNNs)** to accelerate **catalyst material screening** for **fuel cell development**.  
 The goal is to predict **adsorption energies of adsorbates on catalyst surfaces**, helping researchers construct **volcano plots** to identify optimal compositions for the **oxygen reduction reaction (ORR)**.  
@@ -24,6 +20,9 @@ The goal is to predict **adsorption energies of adsorbates on catalyst surfaces*
 - A **FastAPI backend** allows real-time predictions.  
 - A **Streamlit web app** provides an interactive interface for researchers to easily input catalyst compositions and visualize results, including **parity plots**.
 
+### **4. Recurrent Neural Networks (RNNs) - Wind Behavior Analysis**
+📂 **Location:** `RNNs/`  
+As part of my **TechLabs project**, I implemented **LSTM networks** to analyze **wind behavior**. The dataset contained numerous features, making **feature selection and preprocessing** a significant challenge in building a meaningful model.  
 
 ### **5. Keras Deep Dive**
 📂 **Location:** `keras_deep_dive/`  
