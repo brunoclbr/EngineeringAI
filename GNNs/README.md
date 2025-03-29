@@ -38,3 +38,53 @@ This script turns the trained model into a **REST API** using FastAPI, enabling 
 #### **How to Run:**
 ```bash
 uvicorn predict:app --reload
+
+### **3. `cat_web_app.py` - Streamlit Web Interface**
+This script provides a user-friendly **web application** for the research team.
+
+- Users can **select catalyst compositions, Miller indices, and adsorbates** via dropdown menus.
+- Allows **manual input** for single-sample predictions.
+- Supports **CSV file uploads** for batch predictions.
+- Displays results **instantly**, including **parity plots** for batch comparisons.
+
+#### **How to Run:**
+```bash
+streamlit run cat_web_app.py
+
+## **How to Use This Project**
+
+### **1. Set Up the Environment**
+Ensure you have Python installed, then install the required dependencies:
+```bash
+pip install torch torchvision torchaudio mlflow fastapi uvicorn streamlit pandas matplotlib requests
+
+### **2. Train the Model (Optional, if not using a pre-trained model)**
+
+Run the training script to generate a new model:
+
+```bash
+python main.py
+
+### **3. Start the FastAPI Backend**
+
+This serves the model as an API for real-time predictions:
+
+```bash
+uvicorn predict:app --reload
+
+### **4. Launch the Streamlit Web App**
+
+To make predictions via a web interface:
+
+```bash
+streamlit run cat_web_app.py
+
+---
+
+## **Future Improvements**
+
+- Extending model training with larger DFT datasets.
+- Deploying the FastAPI backend on a **cloud server** for public access.
+- Enhancing the Streamlit UI with **data visualization** and **volcano plot** generation.
+
+---
