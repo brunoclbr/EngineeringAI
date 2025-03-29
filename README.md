@@ -27,4 +27,4 @@ As part of my **TechLabs project**, I implemented **LSTM networks** to analyze *
 
 ### **5. Keras Deep Dive**
 📂 **Location:** `keras_deep_dive/`  
-More than a project here I started, as the name of the folder says, to "deep dive" more into the Kras API after having read François Chollet's "Deep Learning with Python". The code and ideas there do not belong to me and full credit goes to the Keras API inventor :)
+More than a project here I started, as the name of the folder says, to "deep dive" more into the Keras API after having read François Chollet's "Deep Learning with Python". The code and ideas there do not belong to me and full credit goes to the Keras API inventor :)
