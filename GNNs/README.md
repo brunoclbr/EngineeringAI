@@ -51,6 +51,7 @@ This script provides a user-friendly **web application** for the research team.
 #### **How to Run:**
 ```bash
 streamlit run cat_web_app.py
+```
 
 ## **How to Use This Project**
 
@@ -58,28 +59,28 @@ streamlit run cat_web_app.py
 Ensure you have Python installed, then install the required dependencies:
 ```bash
 pip install torch torchvision torchaudio mlflow fastapi uvicorn streamlit pandas matplotlib requests
-
+```
 ### **2. Train the Model (Optional, if not using a pre-trained model)**
 
 Run the training script to generate a new model:
 
 ```bash
 python main.py
-
+```
 ### **3. Start the FastAPI Backend**
 
 This serves the model as an API for real-time predictions:
 
 ```bash
 uvicorn predict:app --reload
-
+```
 ### **4. Launch the Streamlit Web App**
 
 To make predictions via a web interface:
 
 ```bash
 streamlit run cat_web_app.py
-
+```
 ---
 
 ## **Future Improvements**
