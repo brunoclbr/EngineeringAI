@@ -17,7 +17,7 @@ app = FastAPI()
 
 # Load the trained model from MLflow
 mlflow.set_tracking_uri("http://localhost:5000")
-MODEL_URI = 'runs:/d27eef3991114170942c4a034a0f0648/hybrid_model_artifact_path'
+MODEL_URI = 'runs:/'
 model = mlflow.pytorch.load_model(MODEL_URI)
 model.eval()  # Set to evaluation mode
 
