@@ -38,6 +38,8 @@ class DataTypesInspectionStrategy(DataInspectionStrategy):
         """
         print("\nData Types and Non-null Counts:")
         print(df.info())
+        print("\nData Description:")
+        print(df.describe())
 
 
 # Concrete Strategy for Summary Statistics Inspection
@@ -106,7 +108,43 @@ if __name__ == "__main__":
     # Example usage of the DataInspector with different strategies.
 
     # Load the data
-    # df = pd.read_csv('../extracted-data/your_data_file.csv')
+    df = pd.read_csv('C:/Users/bruno/OneDrive_main/Folders/GitHub/Deep_Learning_Projects/MLOPs/prices-predictor-system/extracted_data/AmesHousing.csv')
+    # 1. Data Inspection
+    print(type(df))
+    print(df.head())
+    print(df.info())
+    print(df.describe()) # DataFrame(df, path) car = Car("VW"), Car(car, "VW"), car.describe() <=> Car.describe(car)
+
+    #2 Missing Data Handling
+    # df.isnull().sum()
+    # df.dropna()
+    # df.fillna(value)
+
+    #3 Data Cleaning & Transformation
+    #df.drop_duplicates()
+    #df.rename(columns={'old': 'new'})
+    #df.astype({'col': 'type'})
+    #df.replace(['old'], ['new'])
+    #df.reset_index()
+    #df.drop(['col'], axis=1)
+
+    #4 Data Selection & Filtering
+    #df.loc['label', 'col'] --> selects data by labels/conditions
+    #df.iloc[] --> acces data using integer positions
+    #df[df['col'] > value]
+
+    #5 Data Aggregation & Analysis
+    #df.groupby('col').agg(['mean']) --> groups and applies aggregation function
+    #df.sort_values('col', ascending=False)
+    #df.value_counts()-->count unique values in a column
+    #df.apply() --> apply function to rows/columns
+    #df.pivot_table(values, index, columns) --> creates pivot ? from data
+
+    #6 Data Combining/Merging
+    #pd.concat([df1, df2])
+    #pd.merge(df1, df2, on='key')
+    #df1.join(df2) 
+    #df1.append(df2)
 
     # Initialize the Data Inspector with a specific strategy
     # inspector = DataInspector(DataTypesInspectionStrategy())
@@ -116,4 +154,4 @@ if __name__ == "__main__":
     # Change strategy to Summary Statistics and execute
     # inspector.set_strategy(SummaryStatisticsInspectionStrategy())
     # inspector.execute_inspection(df)
-    pass
+   
