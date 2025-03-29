@@ -1,5 +1,25 @@
-# Deep Learning Projects
-This repo contains some of my work as a machine learning engineer. Over the past three years I've been involved in diverse Deep Learning projects using different architectures, and I'm excited to learn about the different applications of AI in the engineering world.
-- Under the Dense_networks folder you can find my first project where I predicted fuel properties based on the chemical structure and thermodynamic conditions of fuels. The challenge here was to design useful feature arrays for the model to learn from, as the thermodynamic state of the fuels required special feature-segmentation to avoid information leakage from data in the validation set to the training set.
--  In the RNNs folder I analized wind behavior with LSTM networks for my TechLabs project. This data had many features which where difficult to sort out in order to create a meaningful model.
--  The CNNs folder implements a U-Net model for segmenting blood vessels from human kidneys. I'm currently working on this project, where the main challenge lies in iterating over the possible ImageDataGenerator features and its trade-off with computational demand.
+# **Deep Learning Projects**
+Welcome to my repository, where I document my journey as a **Machine Learning Engineer** exploring the diverse applications of **Deep Learning** in engineering and science.  
+
+Over the past three years, I’ve worked on various projects utilizing different architectures, constantly learning and refining my approach to real-world AI challenges.  
+
+## **Project Overview**
+### **1. Dense Networks - Fuel Property Prediction**
+📂 **Location:** `Dense_networks/`  
+This was my first deep learning project, where I **predicted fuel properties** based on their **chemical structure** and **thermodynamic conditions**. The main challenge was **feature engineering**, particularly segmenting thermodynamic states effectively to **prevent information leakage** from training to validation sets.  
+
+### **2. Recurrent Neural Networks (RNNs) - Wind Behavior Analysis**
+📂 **Location:** `RNNs/`  
+As part of my **TechLabs project**, I implemented **LSTM networks** to analyze **wind behavior**. The dataset contained numerous features, making **feature selection and preprocessing** a significant challenge in building a meaningful model.  
+
+### **3. Convolutional Neural Networks (CNNs) - Medical Image Segmentation**
+📂 **Location:** `CNNs/`  
+This project focuses on using a **U-Net architecture** to **segment blood vessels in human kidneys**. The key difficulty lies in tuning **ImageDataGenerator** parameters while balancing **computational efficiency**. This is an ongoing project, where I continue iterating on **data augmentation strategies** to enhance performance.  
+
+### **4. Graph Neural Networks (GNNs) - Catalyst Adsorption Energy Prediction**
+📂 **Location:** `GNNs/`  
+In this project, I leverage **Graph Neural Networks (GNNs)** to accelerate **catalyst material screening** for **fuel cell development**.  
+The goal is to predict **adsorption energies of adsorbates on catalyst surfaces**, helping researchers construct **volcano plots** to identify optimal compositions for the **oxygen reduction reaction (ORR)**.  
+- The model is trained using **quantum chemistry data** and fine-tuned using **MLflow**.  
+- A **FastAPI backend** allows real-time predictions.  
+- A **Streamlit web app** provides an interactive interface for researchers to easily input catalyst compositions and visualize results, including **parity plots**.  
