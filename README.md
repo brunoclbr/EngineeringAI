@@ -3,6 +3,8 @@ Welcome to my repository, where I document my journey as a **Machine Learning En
 
 Over the past five years, I’ve worked on various projects utilizing different architectures, models & constantly learning and refining my approach to real-world AI challenges.  
 
+Let's get in touch on LinkedIn! https://www.linkedin.com/in/bruno-copa-a034311b4/
+
 ## **Project Overview**
 ### **1. Artificial Neural Networks (ANNs) - Fuel Property Prediction**
 📂 **Location:** `Dense_networks/`  
