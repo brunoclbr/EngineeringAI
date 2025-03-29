@@ -1,7 +1,7 @@
 # **Deep Learning Projects**
-Welcome to my repository, where I document my journey as a **Machine Learning Engineer** exploring the diverse applications of **Deep Learning** in engineering and science.  
+Welcome to my repository, where I document my journey as a **Machine Learning Engineer** exploring the diverse applications of **Deep Learning** in engineering and science. Originally "only" a mechanical engineer, I've adapted to the modern world necessities of what it means to be a mechanical engineer. The flexibility & knowledge gained during university, backed by my working experience, has taught me how to **identify**, **adapt**, and **learn** possible applications of ML in the vast world of engineering.
 
-Over the past three years, I’ve worked on various projects utilizing different architectures, constantly learning and refining my approach to real-world AI challenges.  
+Over the past five years, I’ve worked on various projects utilizing different architectures, models & constantly learning and refining my approach to real-world AI challenges.  
 
 ## **Project Overview**
 ### **1. Dense Networks - Fuel Property Prediction**
