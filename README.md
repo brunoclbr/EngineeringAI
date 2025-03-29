@@ -14,8 +14,7 @@ This project focuses on using a **U-Net architecture** to **segment blood vessel
 
 ### **3. Graph Neural Networks (GNNs) - Catalyst Adsorption Energy Prediction**
 📂 **Location:** `GNNs/`  
-In this project, I leverage **Graph Neural Networks (GNNs)** to accelerate **catalyst material screening** for **fuel cell development**.  
-The goal is to predict **adsorption energies of adsorbates on catalyst surfaces**, helping researchers construct **volcano plots** to identify optimal compositions for the **oxygen reduction reaction (ORR)**.  
+In this project, I leverage **Graph Neural Networks (GNNs)** to accelerate **catalyst material screening** for **fuel cell development**. The goal is to predict **adsorption energies of adsorbates on catalyst surfaces**, helping researchers construct **volcano plots** to identify optimal compositions for the **oxygen reduction reaction (ORR)**.  
 - The model is trained using **quantum chemistry data** and fine-tuned using **MLflow**.  
 - A **FastAPI backend** allows real-time predictions.  
 - A **Streamlit web app** provides an interactive interface for researchers to easily input catalyst compositions and visualize results, including **parity plots**.
