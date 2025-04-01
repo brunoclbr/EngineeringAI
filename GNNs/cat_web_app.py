@@ -1,7 +1,5 @@
 import streamlit as st
 import requests
-import pandas as pd
-import matplotlib.pyplot as plt
 import json
 
 # FastAPI backend URL
@@ -9,58 +7,41 @@ API_URL = "http://localhost:8000"
 
 st.title("GNN Adsorption Energy Predictor")
 
-# Dropdown menus for user selection
-catalyst = st.selectbox("Select Catalyst", ["Pt", "PtAg", "PtAu", "Pd", "Ag"])
-miller_indices = st.selectbox("Select Miller Indices", ["[1 1 1]", "[1 1 0]", "[1 0 0]"])
-adsorbate = st.selectbox("Select Adsorbate", ["OH*", "O*", "H*"])
+# User input for prediction
+st.subheader("Input Features")
 
-st.subheader("Enter Input Features")
-x1_input = st.text_area("Enter x1 features (comma-separated)")
-x2_input = st.text_area("Enter x2 features (comma-separated)")
-graph_x = st.text_area("Graph Node Features (comma-separated)")
-graph_edge_index = st.text_area("Graph Edge Index (comma-separated pairs)")
-graph_edge_attr = st.text_area("Graph Edge Attributes (comma-separated)")
+# Catalyst selection (user-defined composition)
+st.write("Enter Catalyst Composition (Element: Fraction)")
+catalyst_input = st.text_area("Example: {'Pt': 0.5, 'Au': 0.5}")
+
+# Miller indices selection
+miller_input = st.text_area("Enter Miller Indices (comma-separated)", "1,1,1,0")
+adsorbate = st.text_input("Enter Adsorbate (SMILES format)", "[OH]")
 
 if st.button("Predict"):
     try:
-        # Convert input text to lists
-        x1 = [float(i) for i in x1_input.split(",")]
-        x2 = [float(i) for i in x2_input.split(",")]
-        graph_data = {
-            "x": [list(map(float, graph_x.split(",")))],
-            "edge_index": [list(map(int, graph_edge_index.split(",")))],
-            "edge_attr": [list(map(float, graph_edge_attr.split(",")))]
+        # Parse catalyst input from text to dictionary
+        catalyst = json.loads(catalyst_input.replace("'", '"'))  # Ensure valid JSON format
+
+        # Convert Miller indices to a list
+        miller_indices = list(map(int, miller_input.split(",")))
+
+        # Prepare JSON payload
+        payload = {
+            "catalyst": catalyst,
+            "miller_indices": miller_indices,
+            "adsorbate": adsorbate
         }
 
         # Send request to FastAPI
-        response = requests.post(f"{API_URL}/predict/", json={
-            "catalyst": catalyst,
-            "miller_indices": miller_indices,
-            "adsorbate": adsorbate,
-            "x1": x1,
-            "x2": x2,
-            "graph_data": graph_data
-        })
+        response = requests.post(f"{API_URL}/predict/", json=payload)
 
-        result = response.json()
-        st.success(f"Predicted Adsorption Energy: {result['adsorption_energy_eV']} eV")
+        # Handle response
+        if response.status_code == 200:
+            result = response.json()
+            st.success(f"Predicted Adsorption Energy: {result['predicted_energy [eV]']} eV")
+        else:
+            st.error(f"Error: {response.text}")
+
     except Exception as e:
-        st.error(f"Error: {e}")
-
-st.subheader("Batch Prediction")
-uploaded_file = st.file_uploader("Upload CSV File for Batch Prediction", type=["csv"])
-
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-    st.write("Preview of uploaded data:")
-    st.dataframe(df.head())
-
-    if st.button("Run Batch Prediction"):
-        samples = df.to_dict(orient='records')
-        response = requests.post(f"{API_URL}/batch_predict/", json={"samples": samples, "generate_plot": True})
-        result = response.json()
-
-        if "parity_plot" in result:
-            st.image("parity_plot.png", caption="Parity Plot")
-        st.write("Batch Prediction Results:")
-        st.write(result)
+        st.error(f"Invalid input format. Please check your entries.\n\nError: {e}")

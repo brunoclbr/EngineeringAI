@@ -72,14 +72,16 @@ python main.py
 This serves the model as an API for real-time predictions:
 
 ```bash
-uvicorn predict:app --reload
+uvicorn predict:app --host 0.0.0.0 --port 8000
+
 ```
 ### **4. Launch the Streamlit Web App**
 
 To make predictions via a web interface:
 
 ```bash
-streamlit run cat_web_app.py
+streamlit cat_web_app.py
+
 ```
 ---
 
