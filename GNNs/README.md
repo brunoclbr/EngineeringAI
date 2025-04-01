@@ -37,7 +37,7 @@ This script turns the trained model into a **REST API** using FastAPI, enabling 
 
 #### **How to Run:**
 ```bash
-uvicorn predict:app --reload
+uvicorn predict:app --host 0.0.0.0 --port 8000
 ```
 
 ### **3. `cat_web_app.py` - Streamlit Web Interface**
@@ -52,9 +52,6 @@ This script provides a user-friendly **web application** for the research team.
 ```bash
 streamlit run cat_web_app.py
 ```
-Current WebApp:
-![Description](images/web_app.png)
-
 
 ## **How to Use This Project**
 
