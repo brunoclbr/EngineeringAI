@@ -43,15 +43,18 @@ uvicorn predict:app --reload
 ### **3. `cat_web_app.py` - Streamlit Web Interface**
 This script provides a user-friendly **web application** for the research team.
 
-- Users can **select catalyst compositions, Miller indices, and adsorbates** via dropdown menus.
-- Allows **manual input** for single-sample predictions.
-- Supports **CSV file uploads** for batch predictions.
-- Displays results **instantly**, including **parity plots** for batch comparisons.
+- Users can **input different catalyst compositions, miller indices, and adsorbates** for single-sample predictions
+- To do: implement FastAPI's bacth prediction options:
+    - Support for **CSV file uploads** for batch predictions.
+    - Display of results **instantly**, including **parity plots** for batch comparisons.
 
 #### **How to Run:**
 ```bash
 streamlit run cat_web_app.py
 ```
+Current WebApp:
+![Description](images/web_app.png)
+
 
 ## **How to Use This Project**
 
