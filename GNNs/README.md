@@ -65,7 +65,7 @@ pip install torch mlflow fastapi uvicorn streamlit pandas matplotlib requests
 Run the training script to generate a new model:
 
 ```bash
-python main.py
+python main_torch.py
 ```
 ### **3. Start the FastAPI Backend**
 
