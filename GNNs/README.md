@@ -58,7 +58,7 @@ streamlit run cat_web_app.py
 ### **1. Set Up the Environment**
 Ensure you have Python installed, then install the required dependencies:
 ```bash
-pip install torch torchvision torchaudio mlflow fastapi uvicorn streamlit pandas matplotlib requests
+pip install torch mlflow fastapi uvicorn streamlit pandas matplotlib requests
 ```
 ### **2. Train the Model (Optional, if not using a pre-trained model)**
 
