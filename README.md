@@ -1,7 +1,7 @@
 # **Engineering AI**
 Welcome to my repository, where I document my journey as a **Machine Learning Engineer** exploring the diverse applications of **Deep Learning/AI** in engineering and science. Originally "only" a mechanical engineer, I've adapted to the modern-world necessities of what it means to be a mechanical engineer. The flexibility & knowledge gained during university, backed by my working experience, has taught me how to **identify**, **adapt**, and **learn** possible applications of ML in the vast world of engineering.
 
-Over the past five years, I’ve worked on various projects utilizing different architectures & models, while constantly learning and refining my approach to real-world AI challenges.  
+Over the past five years, I’ve worked on various projects utilizing different architectures & models, while constantly learning and refining my approach to real-world AI challenges. The scope of this repo is strongly focused on the intersection between engineering and ML, rather than the ML-ecosystem itself (MLOPs, Kubernetes etc.). Hence you will mostly find only Python scripts here. For a real-world ML repo, please visit my CryptoPredictiveAI repo!
 
 Let's get in touch on LinkedIn! https://www.linkedin.com/in/bruno-copa-a034311b4/
 
