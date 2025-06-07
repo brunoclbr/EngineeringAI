@@ -38,7 +38,7 @@ This script turns the trained model into a **REST API** using FastAPI, enabling 
 Here you can see some of the prelimnary results of on the test set (data not involved in training/validation) of this approach:
 
 <p align="center">
-  <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/parity_plot.png?raw=true" width="750" alt="results">
+  <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/parity_plot.png?raw=true" width="450" alt="results">
 </p>
 
 #### **How to Run:**
@@ -57,7 +57,7 @@ This script provides a user-friendly **web application** for the research team.
 The web page looks like this:
 
 <p align="center">
-  <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/web_app.png?raw=true" width="750" alt="results">
+  <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/web_app.png?raw=true" width="450" alt="results">
 </p>
 
 #### **How to Run:**
