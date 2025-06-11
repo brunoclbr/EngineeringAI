@@ -35,7 +35,7 @@ This script turns the trained model into a **REST API** using FastAPI, enabling 
 - Returns predicted adsorption energies in **electron volts (eV)**.
 - Supports **batch predictions** and can generate **parity plots** comparing model predictions to DFT values.
 
-Here you can see some of the prelimnary results of on the test set (data not involved in training/validation) of this approach:
+Here you can see some of the prelimnary results of the test set (data not involved in training/validation) of this approach:
 
 <p align="center">
   <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/parity_plot.png?raw=true" width="450" alt="results">
@@ -47,7 +47,7 @@ uvicorn predict:app --host 0.0.0.0 --port 8000
 ```
 
 ### **3. `cat_web_app.py` - Streamlit Web Interface**
-This script provides a user-friendly **web application** for the research team.
+This script provides a user-friendly **web application** for the research team (no programming knowledge).
 
 - Users can **input different catalyst compositions, miller indices, and adsorbates** for single-sample predictions
 - To do: implement FastAPI's bacth prediction options:
