@@ -40,7 +40,7 @@ def load_startup_resources():
     print("--- FastAPI application starting up: Loading resources ---")
 
     # --- 1. Load the ML model from MLflow ---
-    # Make sure your MLflow tracking server is running before you start this app.
+    # Make sure the MLflow tracking server is running before starting this app.
     try:
         print("Connecting to MLflow tracking server...")
         mlflow.set_tracking_uri("http://localhost:5000")
@@ -59,7 +59,7 @@ def load_startup_resources():
         print(f"!!! Error details: {e}")
 
     # --- 2. Load the scaler using a robust file path ---
-    # This builds an absolute path to the file, making it independent of where you run the 'uvicorn' command.
+    # This builds an absolute path to the file, making it independent of where the 'uvicorn' command is run.
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         scaler_path = os.path.join(script_dir, 'pkl', 'torch_scaler.pkl')
@@ -81,10 +81,12 @@ def load_startup_resources():
 
 class PredictionInput(BaseModel):
     """
-    team should be able to compute adsorptions energies in the most efficient and simple way. just follow the format
-        {"catalyst": {"Ni": 0.2, "Fe": 0.2, "Co": 0.2, "Mo": 0.2, "W": 0.2},
+    The team should be able to compute adsorptions energies in the most efficient and simple way. just follow the format
+        {
+        "catalyst": {"Ni": 0.2, "Fe": 0.2, "Co": 0.2, "Mo": 0.2, "W": 0.2},
         "miller_indices": [1, 1, 1, 0],
-        "adsorbate": "[OH]"}
+        "adsorbate": "[OH]"
+        }
     """
     catalyst: dict
     miller_indices: list
@@ -100,11 +102,12 @@ class PredictionInput(BaseModel):
         self.catalyst = np.array(catalyst, dtype=np.float32)
         self.miller_indices = np.array(self.miller_indices, dtype=np.float32)
         mol = Chem.MolFromSmiles(self.adsorbate, sanitize=False)
+        # when exporting the predictions to .csv the above variables were causing trouble. this was a workaround
         self.adsorbate_output = self.adsorbate
         self.adsorbate = smiles_to_graph(mol)
 
 
-class BatchPredictionInput(BaseModel):
+class BatchPredictionInput(BaseModel):  # TO FINISH!! NOT IMPLEMENTED YET
     """
     this class is not meant to be used by the team, only for error quantification of the test set
     """
@@ -154,7 +157,7 @@ def predict(data: PredictionInput):
 
 
 @app.post("/batch_predict/")
-def batch_predict(batch_data: BatchPredictionInput):
+def batch_predict(batch_data: BatchPredictionInput):  # TO FINISH!! NOT IMPLEMENTED YET
     # Add a check to ensure the model and scaler were loaded correctly on startup.
     if model is None or scaler is None:
         raise HTTPException(
@@ -215,7 +218,7 @@ def batch_predict(batch_data: BatchPredictionInput):
 
 
 if __name__ == "__main__":
-    # To run this file directly for simple testing, use: python your_script_name.py
-    # For robust development, use the command: uvicorn your_script_name:app --reload
+
+    # For robust development, use the bash command: uvicorn your_script_name:app --reload
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
