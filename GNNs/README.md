@@ -1,5 +1,9 @@
 # **GNNs for Adsorption Energy Prediction in Catalyst Layers**
 
+<p align="center">
+  <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/IMG_0527.jpeg?raw=true" width="450" alt="GNN">
+</p>
+
 ## **Project Overview**
 
 ### **Why This Project?**
@@ -12,7 +16,8 @@ To address this challenge, I explored the intersection of **quantum chemistry, e
 ## **How It Works**
 
 ### **Machine Learning Approach**
-- The project uses a **Hybrid GNN model**, which combines atomic and structural features to predict adsorption energies.
+- The project uses a **Hybrid GNN model**, which combines atomic features modeled with GNN's, and structural/composition features fed into a feed forward network. 
+- The resulting prediction is the adsorption energy reaction involved in the adsorption process.
 - Training data consists of catalyst surfaces, their **Miller indices**, and different **adsorbates** (e.g., OH*, O*, H*).
 - The model learns to approximate DFT-calculated adsorption energies while significantly reducing computational costs.
 - The predictions can be used to construct **volcano plots**, which help determine the best catalyst compositions for ORR in fuel cells.
@@ -42,9 +47,13 @@ Here you can see some of the prelimnary results of the test set (data not involv
 </p>
 
 #### **How to Run:**
+
+Install the asynchronous server gateway interface ASGI `uvicorn` which will run the web application as a server.
 ```bash
-uvicorn predict:app --host 0.0.0.0 --port 8000
+mlflow ui  # start mlflow server where models were saved before running uvicorn
+uvicorn predict:app --reload
 ```
+Keep this running in the background before proceeding with the next step.
 
 ### **3. `cat_web_app.py` - Streamlit Web Interface**
 This script provides a user-friendly **web application** for the research team (no programming knowledge).
@@ -65,42 +74,28 @@ The web page looks like this:
 streamlit run cat_web_app.py
 ```
 
-## **How to Use This Project**
+Then open the local URL and you can request predictions in real time.
+
+## **Quickly installing project dependencies**
 
 ### **1. Set Up the Environment**
-Ensure you have Python installed, then install the required dependencies:
-```bash
-pip install torch mlflow fastapi uvicorn streamlit pandas matplotlib requests
-```
-### **2. Train the Model (Optional, if not using a pre-trained model)**
-
-Run the training script to generate a new model:
+Ensure you have Python installed, first request a requirements.txt file with the dependencies of the project:
 
 ```bash
-python main_torch.py
+pip freeze > requirements.txt
 ```
-### **3. Start the FastAPI Backend**
-
-This serves the model as an API for real-time predictions:
+then install the required dependencies:
 
 ```bash
-uvicorn predict:app --host 0.0.0.0 --port 8000
-
+pip install -r requirements.txt
 ```
-### **4. Launch the Streamlit Web App**
 
-To make predictions via a web interface:
-
-```bash
-streamlit cat_web_app.py
-
-```
 ---
 
 ## **Future Improvements**
 
 - Extending model training with larger DFT datasets.
-- Deploying the FastAPI backend on a **cloud server** for public access.
+- Deploying the FastAPI backend on a **cloud server** for easier access.
 - Enhancing the Streamlit UI with **data visualization** and **volcano plot** generation.
 
 ---
