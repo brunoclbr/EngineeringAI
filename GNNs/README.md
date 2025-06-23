@@ -59,15 +59,15 @@ Keep this running in the background before proceeding with the next step.
 This script provides a user-friendly **web application** for the research team (no programming knowledge).
 
 - Users can **input different catalyst compositions, miller indices, and adsorbates** for single-sample predictions
-- To do: implement FastAPI's bacth prediction options:
-    - Support for **CSV file uploads** for batch predictions.
-    - Display of results **instantly**, including **parity plots** for batch comparisons.
-
 The web page looks like this:
 
 <p align="center">
   <img src="https://github.com/brunoclbr/EngineeringAI/blob/main/GNNs/images/web_app.png?raw=true" width="450" alt="results">
 </p>
+
+- To do's: implement FastAPI's bacth prediction options:
+    - Support for **CSV file uploads** for batch predictions.
+    - Display of results **instantly**, including **parity plots** for batch comparisons.
 
 #### **How to Run:**
 ```bash
