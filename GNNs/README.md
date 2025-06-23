@@ -59,6 +59,7 @@ Keep this running in the background before proceeding with the next step.
 This script provides a user-friendly **web application** for the research team (no programming knowledge).
 
 - Users can **input different catalyst compositions, miller indices, and adsorbates** for single-sample predictions
+  
 The web page looks like this:
 
 <p align="center">
